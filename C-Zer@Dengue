@@ -1,0 +1,113 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct endereco{
+char rua[50]="0",bairro[40]="0",cidade[15]="0";
+int CEP[8],numero[4];
+};
+struct endereco end;
+struct denuncia{
+char descricao[200]="0";
+int dia,mes,ano=20;
+};
+struct denuncia den;
+struct login{
+char nome[30]="0",email[50]="0",senha[10]="0";
+int cel[9];
+};struct login log;
+char fazden(){
+printf("Descreva aqui a situacao da denuncia:\n");
+fflush(stdin);
+gets(den.descricao);
+}
+char tela(){
+printf("\t==========================================\n");
+printf("\t Bem vindo ao sistema Zer@Dengue!\n");
+printf("\t==========================================\n");
+}
+int main() {
+int x;
+tela();
+printf("Faca o cadastro para continuar\nInsira seu nome:\n");
+fflush(stdin);
+gets(log.nome);
+printf("Insina um numero de celular para contato:\n");
+scanf("%d",&log.cel);
+printf("Insira seu email para cadastro:\n");
+fflush(stdin);
+gets(log.email);
+9
+printf("Insira a senha para cadastro (modelo:'senha123 - maximo 10
+linhas)\n");
+gets(log.senha);
+printf("nome - %s | email - %s | senha -
+%s\n",log.nome,log.email,log.senha);
+printf("Cadastro realizado\n");
+fazden();
+printf("Digite o numero correspondente ao contato que voce deseja
+receber\n");
+printf("1 Para contato presencial\n");
+printf("2 Para contato a distancia\n");
+scanf("%d",&x);
+switch(x){
+case 1:
+printf("Voce foi encaminhado ao setor de contato
+presencial.\nPreciso que voce forneca o endereco para que os
+agentes comunitarios possam visita-lo\n");
+printf("CEP - ");
+scanf("%d",&end.CEP);
+printf("Rua - ");
+fflush(stdin);
+gets(end.rua);
+printf("Bairro -");
+fflush(stdin);
+gets(end.bairro);
+printf("Numero da casa -");
+scanf("%d",&end.numero);
+printf("Cidade -");
+fflush(stdin);
+gets(end.cidade);
+printf("Marque o dia para o contato\nInsira a data para a visita \n");
+printf("dia - ");
+scanf("%d",&den.dia);
+printf("mes - ");
+scanf("%d",&den.mes);
+printf("%s obrigado pelo contato!\nSua visita foi marcada para
+%d/%d/%d.\nA equipe Zer@Dengue agradece seu
+contato!",log.nome,den.dia,den.mes,den.ano);
+break;
+case 2:
+int y;
+char Face[50];
+printf("Voce foi encaminhado ao setor de contato a
+distancia.\nPreciso que voce informe como deseja ser contatado.
+Escolha as opcoes a baixo:\n");
+printf("1.Para whatsapp\n");
+printf("2.Para email\n");
+10
+printf("3.Para Facebook\n");
+printf("4.Celular\n");
+scanf("%d",&y);
+switch(y){
+case 1:
+printf("Um especialista entrara em contato no numero %d\nA equipe
+Zer@Dengue agradece o contato!",log.cel);
+break;
+case 2:
+printf("Um especialista entrara em contato no email %s\nA equipe
+Zer@Dengue agradece o contato!",log.email);
+break;
+case 3:
+printf("Digite aqui o email ou nome para contato pelo Facebook:\n");
+fflush(stdin);
+gets(Face);
+printf("Um especialista entrara em contato por %s\nA equipe
+Zer@Dengue agradece o contato!",Face);
+break;
+case 4:
+printf("Um especialista entrara em contato no numero %d\nA equipe
+Zer@Dengue agradece o contato!",log.cel);
+break;
+}
+}
+return 0;
+}
